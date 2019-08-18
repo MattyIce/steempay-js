@@ -1,0 +1,15 @@
+{
+  "name": "steempay-js",
+  "version": "1.0.0",
+  "description": "JavaScript SDK for SteemPay",
+  "main": "steempay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@yabapmatt",
+  "license": "MIT",
+  "dependencies": {
+    "dsteem": "^0.11.2",
+    "request": "^2.88.0"
+  }
+}
