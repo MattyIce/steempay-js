@@ -32,8 +32,20 @@ async function start_purchase(account_name, amount, price_currency, payment_curr
 	});
 }
 
+async function lookup_purchase(id) {
+	return new Promise((resolve, reject) => {
+		request.get(`${config.api_url}/find_payment?id=${id}`, (e, r, data) => {
+			if(e)
+				reject(e);
+			else
+				resolve(utils.tryParse(data));
+		});
+	});
+}
+
 module.exports = {
 	set_options,
 	validate,
-	start_purchase
+	start_purchase,
+	lookup_purchase
 }
