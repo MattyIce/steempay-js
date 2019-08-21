@@ -21,13 +21,13 @@ function validate(sig, msg, pub_key) {
 	} catch (err) { return false; }
 }
 
-async function start_purchase(account_name, amount, price_currency, payment_currency) {
+async function start_purchase(account_name, amount, price_currency, payment_currency, data) {
 	return new Promise((resolve, reject) => {
-		request.get(`${config.api_url}/start_payment?account=${account_name}&amount=${amount}&price_currency=${price_currency}&payment_currency=${payment_currency}`, (e, r, data) => {
+		request.get(`${config.api_url}/start_payment?account=${account_name}&amount=${amount}&price_currency=${price_currency}&payment_currency=${payment_currency}&data=${encodeURIComponent(data)}`, (e, r, body) => {
 			if(e)
 				reject(e);
 			else
-				resolve(utils.tryParse(data));
+				resolve(utils.tryParse(body));
 		});
 	});
 }

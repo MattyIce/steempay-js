@@ -1,11 +1,11 @@
 {
   "name": "steempay-js",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "JavaScript SDK for SteemPay",
   "main": "steempay.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"minify": "uglifyjs browser/steempay-browser.js -c -o dist/steempay.min.js"
+		"minify": "uglifyjs dist/dsteem.js browser/steempay-browser.js -c -o dist/steempay.min.js"
   },
   "repository": {
     "type": "git",
